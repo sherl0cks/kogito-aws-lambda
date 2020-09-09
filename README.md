@@ -13,7 +13,7 @@ TODO:
 Steps to deploy to AWS Lambda.
 1. Install SAM local: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
 2. Install graal. This was tested against 20.1.0-java8 installed via sdkman https://sdkman.io/
-3. Build the native image: `./mvnw clean install -Dnative -Dnative-image.docker-build=true`
+3. Build the native image: `./mvnw clean install -Dnative -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-native-image:20.1.0-java8`
 4. Login into your AWS account for your cli and make sure you have an s3 bucket you can use for deploy artifacts.
 5. Package it for AWS lambda: `sam package --template-file target/sam.native.yaml --output-template-file packaged-native.yaml --s3-bucket <your-bucket-here>`
 6. Deploy it for AWS lambda: `sam deploy --template-file packaged-native.yaml --capabilities CAPABILITY_IAM --stack-name <your-stack-name-here>`
