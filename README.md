@@ -7,6 +7,9 @@ lambda and API gateway by fowarding all requests received by the lambda to local
 
 On my tests with 128 MB, cold starts with first execution was 1100ms. Second execution was 8ms. Sweeeeeeet.
 
+TODO:
+* Add kotlin support https://quarkus.io/guides/kotlin
+
 Steps to deploy to AWS Lambda.
 1. Install SAM local: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
 2. Install graal. This was tested against 20.1.0-java8 installed via sdkman https://sdkman.io/
