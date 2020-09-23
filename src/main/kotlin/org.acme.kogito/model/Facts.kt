@@ -2,11 +2,11 @@ package org.acme.kogito.model
 
 import java.math.BigDecimal
 
-data class ImportantPrices(val prices: Collection<BigDecimal>) {
+data class ImportantPrices(val priceType: String, val prices: Collection<BigDecimal>) {
     companion object {
         @JvmStatic
-        fun fromDouble(vararg doublePrices: Double): ImportantPrices {
-            return ImportantPrices(doublePrices.map { BigDecimal(it) })
+        fun fromDouble(priceType: String, vararg doublePrices: Double): ImportantPrices {
+            return ImportantPrices(priceType, doublePrices.map { BigDecimal(it) })
         }
     }
 }
