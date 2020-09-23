@@ -1,0 +1,23 @@
+package org.acme.kogito;
+import org.acme.kogito.model.*;
+dialect  "mvel"
+
+// Generate these sorts of rules via the decision table - it's really just config data
+rule "PricingRules"
+    when
+        not ImportantPrices()
+    then
+        // This is your editable field in the decision table
+        insert(ImportantPrices.fromDouble(1.2, 3.4, 5.6, 7.8))
+end
+
+// Perhaps you just write this part as DRL
+rule "Is the price valid"
+    when
+        $offer : Offer()
+        ImportantPrices( prices contains $offer.pricePerWidget )
+    then
+        modify($offer){
+            setPriceValidationDecision(new PriceValidationDecision(false))
+        }
+ end
