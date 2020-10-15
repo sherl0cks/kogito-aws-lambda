@@ -13,6 +13,9 @@ Kogito is not yet 1.0. APIs could change. Things could break. We'll need to proc
 
 # TODO
 Probably time to bite the java 11 bullet, but that doesn't work with amazon lambda http extension.
+- https://github.com/quarkusio/quarkus/issues/10729
+- https://github.com/quarkusio/quarkus/issues/12039
+- https://github.com/awslabs/aws-serverless-java-container/pull/369
 - https://quarkusio.zulipchat.com/#narrow/stream/187038-dev/topic/How.20to.20get.20rid.20of.20the.20ILLEGAL.20messages
 - https://github.com/awslabs/aws-serverless-java-container/blob/master/aws-serverless-java-container-core/src/main/java/com/amazonaws/serverless/proxy/internal/LambdaContainerHandler.java#L84
 - https://github.com/quarkusio/quarkus/blob/1.7.3.Final/extensions/amazon-lambda-http/runtime/src/main/java/io/quarkus/amazon/lambda/http/LambdaHttpHandler.java#L215-L225
